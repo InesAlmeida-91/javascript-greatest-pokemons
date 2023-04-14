@@ -1,7 +1,22 @@
 // Iteration 1: All Fire Pokemons- get the array of all Fire type pokemons
+function getAllFirePokemons(array) {
+    const fireArray = array.filter(firePokemon => firePokemon.type.includes("Fire"))
+    return fireArray
+}
 
 // Iteration 2: Shortest Pokemon- find the `name` of the shortest pokemon
-
+function shortestPokemon(array) {
+    if(array.length === 0) {
+        return 0
+    }
+    const heights = array.map(function (pokemon){
+        return parseFloat(pokemon.height)
+    })
+    const shortPokemon = heights.sort()
+    const shortestPokemonIndex = heights[0]
+    //find the name of the pokemon with the heigth equal to heights[0]
+    return //.name
+}
 // Iteration 3: candy_count average - average of `candy_count` for all the pokemons
 
 // Iteration 4: images for the first 10 `Ground`  Pokemons
