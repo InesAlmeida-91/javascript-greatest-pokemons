@@ -15,7 +15,7 @@ function shortestPokemon(array) {
     const shortPokemon = heights.sort()
     const shortestPokemonIndex = shortPokemon[0];
     //find the name of the pokemon with the heigth equal to heights[0]
-    //const shortestPokemon = array.find()
+    //const shortestPokemon = array.find() or filter??
     //return shortestPokemon
 }
 // Iteration 3: candy_count average - average of `candy_count` for all the pokemons
@@ -23,14 +23,23 @@ function candyAverage(array) {
     if(array.length === 0){
         return 0
     }
-    if()//return avarage even if some pokemons do not have candy_count
-    const candyArray = array.reduce((accumulator, currentValue) => accumulator.type[candy_count] + currentValue.type[candy_count])
+    //return avarage even if some pokemons do not have candy_count
+    const candyArray = array.reduce((accumulator, currentValue) => accumulator.type[candy_count] + currentValue.type[candy_count])//incorrect way
     const candyAvg = candyArray / array.length
     const avgRound = Math.round(candyAvg * 100)/100 //round to 2 decimals
     return avgRound
-    
 }
+
 // Iteration 4: images for the first 10 `Ground`  Pokemons
+function getGroundPokeImg(array) {
+    if(array.length === 0) {
+        return 0
+    }
+    const groundType = array.filter(pokemon => pokemon.type.includes('Ground'));
+    const firstTenGround = groundType.slice(0, 10)
+    const imgArray = firstTenGround.map(pokemon => pokemon.img)
+    return imgArray
+}
 
 // Iteration 5: Find all pokemon names heavier than Pikachu
 
