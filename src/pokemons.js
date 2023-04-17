@@ -13,10 +13,13 @@ function shortestPokemon(array) {
         return parseFloat(pokemon.height)
     })
     const shortPokemon = heights.sort()
-    const shortestPokemonIndex = shortPokemon[0];
-    //find the name of the pokemon with the heigth equal to heights[0]
-    //const shortestPokemon = array.find() or filter??
-    //return shortestPokemon
+    const shortestPokemonHeight = shortPokemon[0];
+    //find the name of the pokemon with the heigth equal to shortPokemon[0]
+    for(let  i = 0; i < array.length; i ++) {
+        if(parseFloat(array[i].height) === shortestPokemonHeight){
+            return array[i].name
+        }
+    }
 }
 // Iteration 3: candy_count average - average of `candy_count` for all the pokemons
 function candyAverage(array) {
