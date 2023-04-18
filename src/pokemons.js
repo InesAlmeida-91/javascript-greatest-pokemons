@@ -26,9 +26,9 @@ function candyAverage(array) {
     if(array.length === 0){
         return 0
     }
-    //return avarage even if some pokemons do not have candy_count
-    const candyArray = array.reduce((accumulator, currentValue) => accumulator.type[candy_count] + currentValue.type[candy_count])//incorrect way
-    const candyAvg = candyArray / array.length
+    const candyCount = array.filter(pokemon => pokemon.candy_count)
+    const candySum = candyCount.reduce((accumulator, currentValue) => accumulator + currentValue.candy_count, 0)
+    const candyAvg = candySum / array.length
     const avgRound = Math.round(candyAvg * 100)/100 //round to 2 decimals
     return avgRound
 }
