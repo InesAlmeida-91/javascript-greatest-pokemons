@@ -45,7 +45,24 @@ function getGroundPokeImg(array) {
 }
 
 // Iteration 5: Find all pokemon names heavier than Pikachu
+function getHeavyPokemons(array) {
+    if(array.length === 0) {
+            return 0
+        }
+    const pokemonWeight = array.map(pokemon => parseFloat(pokemon.weight))
+    for(let i = 0; i < array.length; i++) {
+        if(array[i].name === 'Pikachu') {
+            let pikachuWeight = parseFloat(array[i].weight)
+            return pikachuWeight
+        }
+    }
+    for(let j = 0; j < pokemonWeight.length; j++) {
+        if(parseFloat(pokemonWeight[j]) > pikachuWeight){
+              return array
+          }
+    }
 
+}
 // Iteration 6: Alphabetic Order - Order by name and print the first 20 names
 
 // Iteration 7: Strong pokemons - return an array of first 15 pokemons, that have just one `weakness`. If there are less that 15, return all of them 
